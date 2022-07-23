@@ -349,6 +349,7 @@ Telnet berhasil
 ) 
 
 -install wget
+
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-wget.png
 ) 
 -download file website http://172.16.8.1/web.tar.gz
