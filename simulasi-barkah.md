@@ -16,8 +16,8 @@ sudo systemctl restart network
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik5.png) 
 
 4) Cek kembali hasil seting ip
-ifconfig eth0
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik6.png) 
+ifconfig eth0<br/>
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik6.png)<br/> 
 kesimpulan seting sudah berhasil
 <br/>
 ###Login ssh tanpa password
@@ -34,13 +34,13 @@ kesimpulan seting sudah berhasil
 1) sudo yum install epel-release (menginstall repo EPEL)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/epel-release.png) 
 
-2) sudo yum install nginx -y (menginstall nginx)
+2) sudo yum install nginx -y (menginstall nginx)<br/>
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-nginx.png) 
 
 3) Enable dan Start nginx
 -sudo systemctl enable nginx (mengaktifkan service nginx supaya ketika system booting service bisa berjalan langsung)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/enable-nginx.png) 
--sudo systemctl start nginx (menjalankan service nginx)
+-sudo systemctl start nginx (menjalankan service nginx)<br/>
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/start-nginx.png) 
 -sudo systemctl status nginx (pengecekan status nginx)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/status-nginx.png) 
@@ -74,9 +74,6 @@ sudo vi /etc/nginx/nginx.conf
 >    include             /etc/nginx/mime.types;
 >    default_type        application/octet-stream;
 >
->    # Load modular configuration files from the /etc/nginx/conf.d directory.
->    # See http://nginx.org/en/docs/ngx_core_module.html#include
->    # for more information.
 >    include /etc/nginx/conf.d/*.conf;
 >
 >    server {
@@ -111,7 +108,7 @@ sudo vi /etc/nginx/nginx.conf
 
 5) Reload service nginx (sudo service nginx reload)
 <br/>
-###Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php
+###Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/>
 1) proses install php-fpm
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-remi-repo.png) 
 - sudo yum -y install yum-utils
