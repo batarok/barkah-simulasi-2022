@@ -22,8 +22,8 @@ ifconfig eth0<br/>
 kesimpulan seting sudah berhasil
 <br/>
 ### Login ssh tanpa password
-1) Membuat ssh authorized_keys dengan command ssh-keygen dan dibuat tanpa password
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh-keygen.png) 
+1) Membuat ssh authorized_keys dengan command ssh-keygen dan dibuat tanpa password \
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh-keygen.png)
 
 2) Copy authorized_keys dari lokal ke vm ssh-copy-id -i ~/.ssh/id_rsa.pub centos@192.168.1.89 -p 2269
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh2.png)\
