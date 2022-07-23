@@ -344,7 +344,6 @@ http {
     }
 }
 ```
-\
 Untuk link akses website
 \
 [http://192.168.1.89:869/73](http://192.168.1.89:869/73)
