@@ -17,20 +17,20 @@ sudo systemctl restart network
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik5.png) 
 
 4) Cek kembali hasil seting ip
-ifconfig eth0<br/>
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik6.png)<br/> 
+ifconfig eth0
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik6.png)
 kesimpulan seting sudah berhasil
-<br/>
+
 ### Login ssh tanpa password
 1) Membuat ssh authorized_keys dengan command ssh-keygen dan dibuat tanpa password
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh-keygen.png)
 
 2) Copy authorized_keys dari lokal ke vm ssh-copy-id -i ~/.ssh/id_rsa.pub centos@192.168.1.89 -p 2269
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh2.png)\
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh2.png)
 3) Coba login ssh -p 2269 centos@192.168.1.89, berhasil login tanpa password
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh3.png) 
-<br/>
-###Install webserver nginx dan seting mod rewrite
+
+### Install webserver nginx dan seting mod rewrite
 1) sudo yum install epel-release (menginstall repo EPEL)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/epel-release.png) 
 
