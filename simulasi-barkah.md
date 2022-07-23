@@ -116,21 +116,21 @@ http {
 1) proses install php-fpm
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-remi-repo.png) 
-- sudo yum -y install yum-utils
-- sudo yum-config-manager --disable 'remi-php*'
-- sudo yum-config-manager --enable remi-php73
-- sudo yum-config-manager --enable remi-php74
-- sudo yum-config-manager --enable remi-php80
-- sudo yum-config-manager --disable 'remi-php*'
-- sudo yum-config-manager --enable remi-php73
-- sudo yum-config-manager --enable remi-php74
-- sudo yum-config-manager --enable remi-php80
-- sudo yum install php php73-fpm php74-fpm php80-fpm -y
+-sudo yum -y install yum-utils
+-sudo yum-config-manager --disable 'remi-php*'
+-sudo yum-config-manager --enable remi-php73
+-sudo yum-config-manager --enable remi-php74
+-sudo yum-config-manager --enable remi-php80
+-sudo yum-config-manager --disable 'remi-php*'
+-sudo yum-config-manager --enable remi-php73
+-sudo yum-config-manager --enable remi-php74
+-sudo yum-config-manager --enable remi-php80
+-sudo yum install php php73-fpm php74-fpm php80-fpm -y
 
 2) seting config pada php-fpm yang sudah di install
 lakukan backup sebelum edit
-- sudo cp /etc/opt/remi/php73/php-fpm.d/www.conf /etc/opt/remi/php73/php-fpm.d/www.conf-bak
-- sudo vi /etc/opt/remi/php73/php-fpm.d/www.conf
+-sudo cp /etc/opt/remi/php73/php-fpm.d/www.conf /etc/opt/remi/php73/php-fpm.d/www.conf-bak
+-sudo vi /etc/opt/remi/php73/php-fpm.d/www.conf
 perubahan yang dilakukan pada bagian
 ```plaintext
 listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php73-fpm.sock
@@ -145,7 +145,7 @@ group = apache menjadi group = nginx
 Kemudian save dan exit.
 \
 sebelum enable dan start harus membuat folder **php** di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
-- sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting) setelah itu cek status php73
+-sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting) setelah itu cek status php73
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php73.png
 )
 \
