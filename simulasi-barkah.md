@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <h1>Soal no 19</h1>
+=======
+<h1 align='center'>Soal no 19</h1>
+>>>>>>> 5202dbd7c9ca0a17de3a997328ec81c6157ce507
 <br/>
 ###Seting interface VM 1 jadi ip static
 1) copy seting interface sebelum di edit supaya nanti ada backup
