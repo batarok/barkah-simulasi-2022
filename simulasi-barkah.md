@@ -46,8 +46,8 @@ kesimpulan seting sudah berhasil
 -sudo systemctl status nginx (pengecekan status nginx)
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/status-nginx.png)
-nginx sudah berjalan
 \
+nginx sudah berjalan
 4) Seting mod rewrite
 sudo vi /etc/nginx/nginx.conf
 >user nginx;
