@@ -41,7 +41,8 @@ kesimpulan seting sudah berhasil
 \
 -sudo systemctl start nginx (menjalankan service nginx)
 \
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/start-nginx.png) 
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/start-nginx.png)
+\
 -sudo systemctl status nginx (pengecekan status nginx)
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/status-nginx.png)
