@@ -353,18 +353,27 @@ Untuk link akses website
 [http://192.168.1.89:869/80](http://192.168.1.89:869/80) 
 ### Seting interface ke 2 eth1
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/eth1.png
-) 
+)
+\ 
 di ubah menjadi
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/eth1-1.png
 ) 
-- sudo systemctl restart network
-- ifconfig
+\
+sudo systemctl restart network
+\
+-ifconfig
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/eth1-2.png
 ) 
-- Telnet ke ip 172.16.8.1 port 80
+\
+-Telnet ke ip 172.16.8.1 port 80
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/telnet-1.png
 ) 
+\
 Telnet berhasil
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/telnet-2.png
 ) 
 
