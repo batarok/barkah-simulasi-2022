@@ -374,14 +374,11 @@ Telnet berhasil
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/telnet-2.png
 ) 
-
+\
 -install wget
-
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-wget.png
-) 
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-wget.png) 
 -download file website http://172.16.8.1/web.tar.gz
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/download-file-web1.png
-) 
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/download-file-web1.png)
 -ekstrak file web
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ekstrak-file-web.png
 ) 
