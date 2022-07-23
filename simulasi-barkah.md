@@ -1,14 +1,14 @@
 
 <h1 align='center'>Soal no 19</h1>
-<br/>
-###Seting interface VM 1 jadi ip static
+
+<h3> Seting interface VM 1 jadi ip static</h3>
 1) copy seting interface sebelum di edit supaya nanti ada backup
 sudo cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth1
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik1.png) 
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik1.png)
 
 2) ubah seting dhcp eth0 ke ip static 10.141.0.69
 sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik2.png) 
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik2.png)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik3.png) 
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik4.png) 
 
