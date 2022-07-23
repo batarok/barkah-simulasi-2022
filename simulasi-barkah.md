@@ -5,17 +5,14 @@
 1) copy seting interface sebelum di edit supaya nanti ada backup
 sudo cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth1
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik1.png)
-\
 2) ubah seting dhcp eth0 ke ip static 10.141.0.69
 sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik2.png)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik3.png) 
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik4.png) 
-\
 3) Lakukan restart network setelah perubahan dilakukan
 sudo systemctl restart network
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik5.png) 
-\
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik5.png)
 4) Cek kembali hasil seting ip
 ifconfig eth0
 \
