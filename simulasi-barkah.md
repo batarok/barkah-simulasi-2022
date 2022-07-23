@@ -344,12 +344,15 @@ http {
     }
 }
 ```
+\
 Untuk link akses website
-- [http://192.168.1.89:869/73](http://192.168.1.89:869/73)
-- [http://192.168.1.89:869/74](http://192.168.1.89:869/74) 
-- [http://192.168.1.89:869/80](http://192.168.1.89:869/80) 
-<br/
-###Seting interface ke 2 eth1
+\
+[http://192.168.1.89:869/73](http://192.168.1.89:869/73)
+\
+[http://192.168.1.89:869/74](http://192.168.1.89:869/74) 
+\
+[http://192.168.1.89:869/80](http://192.168.1.89:869/80) 
+### Seting interface ke 2 eth1
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/eth1.png
 ) 
 di ubah menjadi
