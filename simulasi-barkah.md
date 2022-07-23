@@ -22,7 +22,6 @@ ifconfig eth0
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik6.png)
 \
 kesimpulan seting sudah berhasil
-\
 ### Login ssh tanpa password
 1) Membuat ssh authorized_keys dengan command ssh-keygen dan dibuat tanpa password
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ssh-keygen.png)
@@ -114,7 +113,6 @@ sudo vi /etc/nginx/nginx.conf
 >   	}
 
 5) Reload service nginx (sudo service nginx reload)
-\
 ### Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/>
 1) proses install php-fpm
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-remi-repo.png) 
