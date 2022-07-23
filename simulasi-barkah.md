@@ -1,6 +1,6 @@
 
 ## Soal no 19
-\
+
 ### Seting interface VM 1 jadi ip static
 1) copy seting interface sebelum di edit supaya nanti ada backup
 sudo cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth1
@@ -114,8 +114,8 @@ sudo vi /etc/nginx/nginx.conf
 >   	}
 
 5) Reload service nginx (sudo service nginx reload)
-<br/>
-###Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/>
+\
+### Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/>
 1) proses install php-fpm
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-remi-repo.png) 
 - sudo yum -y install yum-utils
