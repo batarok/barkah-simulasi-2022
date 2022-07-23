@@ -3,7 +3,7 @@
 ###Seting interface VM 1 jadi ip static
 1) copy seting interface sebelum di edit supaya nanti ada backup
 sudo cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth1
-![](/home/barkah/Documents/test Admin/set-ip-statik1.png) 
+![](/home/barkah/Documents/GitHub/barkah-simulasi-2022/set-ip-statik1.png) 
 
 2) ubah seting dhcp eth0 ke ip static 10.141.0.69
 sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
@@ -366,5 +366,4 @@ Telnet berhasil
 )
 untuk http://192.168.1.89:869/phpMyAdmin belum bisa diakses, untuk solusi menggunakan adminer
 -[http://192.168.1.89:869/admin](http://192.168.1.89:869/admin) 
-![](file:///home/barkah/Documents/test%20Admin/adminer.png
-) 
+![](https://drive.google.com/file/d/1nuEZ6ISKQtbdf04yAhSJD5wbrzNVIZW6/view?usp=sharing) 
