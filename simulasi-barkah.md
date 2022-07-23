@@ -376,10 +376,15 @@ Telnet berhasil
 ) 
 \
 -install wget
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-wget.png) 
+\
 -download file website http://172.16.8.1/web.tar.gz
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/download-file-web1.png)
+\
 -ekstrak file web
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ekstrak-file-web.png
 ) 
 -url website [http://192.168.1.89:869/index.php](http://192.168.1.89:869/index.php)  karena konfigurasi index utama pada nginx masih index.html
