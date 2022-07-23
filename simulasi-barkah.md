@@ -35,11 +35,9 @@ kesimpulan seting sudah berhasil
 1) sudo yum install epel-release (menginstall repo EPEL)
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/epel-release.png) 
-\
 2) sudo yum install nginx -y (menginstall nginx)
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-nginx.png) 
-\
 3) Enable dan Start nginx
 -sudo systemctl enable nginx (mengaktifkan service nginx supaya ketika system booting service bisa berjalan langsung)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/enable-nginx.png) 
@@ -49,7 +47,6 @@ kesimpulan seting sudah berhasil
 -sudo systemctl status nginx (pengecekan status nginx)
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/status-nginx.png)
-\
 nginx sudah berjalan
 \
 4) Seting mod rewrite
