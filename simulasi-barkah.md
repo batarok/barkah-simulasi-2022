@@ -38,8 +38,8 @@ kesimpulan seting sudah berhasil
 3) Enable dan Start nginx
 -sudo systemctl enable nginx (mengaktifkan service nginx supaya ketika system booting service bisa berjalan langsung)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/enable-nginx.png) 
--sudo systemctl start nginx (menjalankan service nginx)
 \
+-sudo systemctl start nginx (menjalankan service nginx)
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/start-nginx.png) 
 -sudo systemctl status nginx (pengecekan status nginx)
 \
