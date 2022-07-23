@@ -112,8 +112,9 @@ http {
 ```
 
 5) Reload service nginx (sudo service nginx reload)
-### Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/
+### Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php
 1) proses install php-fpm
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-remi-repo.png) 
 - sudo yum -y install yum-utils
 - sudo yum-config-manager --disable 'remi-php*'
@@ -130,7 +131,8 @@ http {
 lakukan backup sebelum edit
 - sudo cp /etc/opt/remi/php73/php-fpm.d/www.conf /etc/opt/remi/php73/php-fpm.d/www.conf-bak
 - sudo vi /etc/opt/remi/php73/php-fpm.d/www.conf
-perubahan yang dilakukan
+perubahan yang dilakukan pada bagian
+```plaintext
 listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php73-fpm.sock
 ;listen.owner = nobody menjadi listen.owner = nginx
 
@@ -138,13 +140,12 @@ listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php73-fpm.sock
 
 ;listen.mode = 0666 menjadi listen.mode = 0666
 user = apache menjadi user = nginx
-
 group = apache menjadi group = nginx
-
+```
 Kemudian save dan exit.
 
 
-sebelum enable dan start harus membuat folder <strongphp</strong di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
+sebelum enable dan start harus membuat folder **php** di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
 - sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting) setelah itu cek status php73
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php73.png
 ) 
