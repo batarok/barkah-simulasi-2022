@@ -17,7 +17,7 @@ sudo systemctl restart network
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik5.png) 
 
 4) Cek kembali hasil seting ip
-ifconfig eth0
+ifconfig eth0 /
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik6.png)
 kesimpulan seting sudah berhasil
 
