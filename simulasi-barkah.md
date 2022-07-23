@@ -145,6 +145,7 @@ group = apache menjadi group = nginx
 Kemudian save dan exit.
 \
 sebelum enable dan start harus membuat folder **php** di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
+\
 -sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting) setelah itu cek status php73
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php73.png
 )
@@ -167,14 +168,20 @@ listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php80-fpm.sock
 ) 
 
 3) Membuat folder website dan mengisinya dengan file phpinfo
-- membuat folder
+-membuat folder
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/folder-web.png
 )
-- membuat file website dan melakukan copy ke folder website lain 
+\
+-membuat file website dan melakukan copy ke folder website lain
+\
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/file%20website.png
-) 
+)
+\ 
 Untuk isi file index.php nya
+```plaintext
 <?php phpinfo(); ?
+```
 
 4) melakukan seting nginx website 73 74 & 80
 nginx website 73
