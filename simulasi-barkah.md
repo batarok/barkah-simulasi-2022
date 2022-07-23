@@ -385,11 +385,11 @@ Telnet berhasil
 \
 -ekstrak file web
 \
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ekstrak-file-web.png
-) 
--url website [http://192.168.1.89:869/index.php](http://192.168.1.89:869/index.php)  karena konfigurasi index utama pada nginx masih index.html
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/ekstrak-file-web.png)
+\
+-url website [http://192.168.1.89:869/index.php](http://192.168.1.89:869/index.php) karena konfigurasi index utama pada nginx masih index.html
 
-###install mysql dan phpmyadmin
+### install mysql dan phpmyadmin
 1 sudo yum install mysql php-mysql -y
 2 install phpmyadmin
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-phpmyadmin.png
