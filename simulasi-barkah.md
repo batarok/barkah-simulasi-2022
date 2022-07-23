@@ -1,7 +1,7 @@
 
-<h1 align='center'>Soal no 19</h1>
+## Soal no 19
 
-<h3> Seting interface VM 1 jadi ip static</h3>
+### Seting interface VM 1 jadi ip static
 1) copy seting interface sebelum di edit supaya nanti ada backup
 sudo cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth1
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/set-ip-statik1.png)
