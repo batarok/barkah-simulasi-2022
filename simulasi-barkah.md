@@ -49,67 +49,70 @@ kesimpulan seting sudah berhasil
 \
 nginx sudah berjalan
 4) Seting mod rewrite
+\
 sudo vi /etc/nginx/nginx.conf
->user nginx;
->worker_processes auto;
->error_log /var/log/nginx/error.log;
->pid /run/nginx.pid;
->include /usr/share/nginx/modules/*.conf;
->
->events {
->    worker_connections 1024;
->}
->
->http {
->    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
->                      '$status $body_bytes_sent "$http_referer" '
->                      '"$http_user_agent" "$http_x_forwarded_for"';
->
->    access_log  /var/log/nginx/access.log  main;
->
->    sendfile            on;
->    tcp_nopush          on;
->    tcp_nodelay         on;
->    keepalive_timeout   65;
->    types_hash_max_size 4096;
->
->    include             /etc/nginx/mime.types;
->    default_type        application/octet-stream;
->
->    include /etc/nginx/conf.d/*.conf;
->
->    server {
->        listen       80;
->        #listen       [::]:80;
->        server_name  192.168.1.89;
->        root         /usr/share/nginx/html;
->	index	index.html index.html;
->
->        # Load configuration files for the default server block.
->        include /etc/nginx/default.d/*.conf;
->
->	location / {
->        try_files $uri $uri/ =404;
->    	}
->	
->        error_page 404 /404.html;
->        error_page 500 502 503 504 /50x.html;
->        location = /50x.html {
->        }
->
->	location ~ \.php$ {
->        try_files $uri =404;
->	fastcgi_split_path_info ^(.+\.php)(/.+)$;
->        fastcgi_pass unix:/var/run/php/php80-fpm.sock;
->        fastcgi_index index.php;
->        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->        include fastcgi_params;
->   	 } 
->   	 }
->   	}
+```plaintext
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        #listen       [::]:80;
+        server_name  192.168.1.89;
+        root         /usr/share/nginx/html;
+	index	index.html index.html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+	location / {
+        try_files $uri $uri/ =404;
+    	}
+	
+        error_page 404 /404.html;
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+        }
+
+	location ~ \.php$ {
+        try_files $uri =404;
+	fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php/php80-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+   	 } 
+   	 }
+   	}
+   	```
 
 5) Reload service nginx (sudo service nginx reload)
-### Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/>
+### Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/
 1) proses install php-fpm
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-remi-repo.png) 
 - sudo yum -y install yum-utils
@@ -128,29 +131,29 @@ lakukan backup sebelum edit
 - sudo cp /etc/opt/remi/php73/php-fpm.d/www.conf /etc/opt/remi/php73/php-fpm.d/www.conf-bak
 - sudo vi /etc/opt/remi/php73/php-fpm.d/www.conf
 perubahan yang dilakukan
->listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php73-fpm.sock
->;listen.owner = nobody menjadi listen.owner = nginx
->
->;listen.group = nobody menjadi listen.group = nginx
->
->;listen.mode = 0666 menjadi listen.mode = 0666
->user = apache menjadi user = nginx
->
->group = apache menjadi group = nginx
+listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php73-fpm.sock
+;listen.owner = nobody menjadi listen.owner = nginx
+
+;listen.group = nobody menjadi listen.group = nginx
+
+;listen.mode = 0666 menjadi listen.mode = 0666
+user = apache menjadi user = nginx
+
+group = apache menjadi group = nginx
 
 Kemudian save dan exit.
 
 
-sebelum enable dan start harus membuat folder <strong>php</strong> di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
+sebelum enable dan start harus membuat folder <strongphp</strong di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
 - sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting) setelah itu cek status php73
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php73.png
 ) 
 selanjutnya lakukan hal sama untuk php74 dan php80 dengan copy config dari php73 dan di modifikasi bagian www.conf.
 untuk php74 yang berbeda pada bagian
->listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php74-fpm.sock
+listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php74-fpm.sock
 
 untuk php80 yang berbeda pada bagian
->listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php80-fpm.sock
+listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php80-fpm.sock
 
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php74-1.png) 
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php74-2.png
@@ -168,167 +171,167 @@ untuk php80 yang berbeda pada bagian
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/file%20website.png
 ) 
 Untuk isi file index.php nya
-><?php phpinfo(); ?>
+<?php phpinfo(); ?
 
 4) melakukan seting nginx website 73 74 & 80
 nginx website 73
->location ~ /73 {
->        try_files /73/$uri /73/$uri/ /73/index.php?q=$uri&$args;
->
->		location ~* \.php$ {
->		fastcgi_pass unix:/var/run/php/php73-fpm.sock;
->		include fastcgi_params;
->        	fastcgi_index index.php;
->		fastcgi_split_path_info ^(.+\.php)(/.+)$;
->		fastcgi_param PATH_INFO             $fastcgi_path_info;
->        	fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
->        	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->        	 }
->	
->	}
+location ~ /73 {
+        try_files /73/$uri /73/$uri/ /73/index.php?q=$uri&$args;
+
+		location ~* \.php$ {
+		fastcgi_pass unix:/var/run/php/php73-fpm.sock;
+		include fastcgi_params;
+        	fastcgi_index index.php;
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		fastcgi_param PATH_INFO             $fastcgi_path_info;
+        	fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
+        	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        	 }
+	
+	}
 
 nginx website 74
->location ~ /74 {
->        try_files /74/$uri /74/$uri/ /74/index.php?q=$uri&$args;
->
->               location ~* \.php$ {
->                fastcgi_pass unix:/var/run/php/php74-fpm.sock;
->                include fastcgi_params;
->                fastcgi_index index.php;
->                fastcgi_split_path_info ^(.+\.php)(/.+)$;
->                fastcgi_param PATH_INFO             $fastcgi_path_info;
->                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
->                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->                 }
->
->        }
+location ~ /74 {
+        try_files /74/$uri /74/$uri/ /74/index.php?q=$uri&$args;
+
+               location ~* \.php$ {
+                fastcgi_pass unix:/var/run/php/php74-fpm.sock;
+                include fastcgi_params;
+                fastcgi_index index.php;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_param PATH_INFO             $fastcgi_path_info;
+                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                 }
+
+        }
 
 nginx website 80
->location ~ /80 {
->        try_files /80/$uri /80/$uri/ /80/index.php?q=$uri&$args;
->
->                location ~* \.php$ {
->                fastcgi_pass unix:/var/run/php/php80-fpm.sock;
->                include fastcgi_params;
->                fastcgi_index index.php;
->                fastcgi_split_path_info ^(.+\.php)(/.+)$;
->                fastcgi_param PATH_INFO             $fastcgi_path_info;
->                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
->                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->                 }
->
->        }
+location ~ /80 {
+        try_files /80/$uri /80/$uri/ /80/index.php?q=$uri&$args;
+
+                location ~* \.php$ {
+                fastcgi_pass unix:/var/run/php/php80-fpm.sock;
+                include fastcgi_params;
+                fastcgi_index index.php;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_param PATH_INFO             $fastcgi_path_info;
+                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                 }
+
+        }
 
 untuk konfigurasi tersebut digabungkan dalam file nginx.conf yang ada di /etc/nginx/nginx.conf, jadi keseluruhan file config seperti ini;
->user nginx;
->worker_processes auto;
->error_log /var/log/nginx/error.log;
->pid /run/nginx.pid;
->
->include /usr/share/nginx/modules/*.conf;
->
->events {
->    worker_connections 1024;
->}
->
->http {
->    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
->                      '$status $body_bytes_sent "$http_referer" '
->                      '"$http_user_agent" "$http_x_forwarded_for"';
->
->    access_log  /var/log/nginx/access.log  main;
->
->    sendfile            on;
->    tcp_nopush          on;
->    tcp_nodelay         on;
->    keepalive_timeout   65;
->    types_hash_max_size 4096;
->
->    include             /etc/nginx/mime.types;
->    default_type        application/octet-stream;
->    include /etc/nginx/conf.d/*.conf;
->
->    server {
->        listen       80;
->        #listen       [::]:80;
->        server_name  192.168.1.89;
->        root         /usr/share/nginx/html;
->	index	index.html;
->
->        include /etc/nginx/default.d/*.conf;
->
->	location / {
->        try_files $uri $uri/ =404;
->    	}
->	
->	location ~ /73 {
->        try_files /73/$uri /73/$uri/ /73/index.php?q=$uri&$args;
->
->		location ~* \.php$ {
->		fastcgi_pass unix:/var/run/php/php73-fpm.sock;
->		include fastcgi_params;
->        	fastcgi_index index.php;
->		fastcgi_split_path_info ^(.+\.php)(/.+)$;
->		fastcgi_param PATH_INFO             $fastcgi_path_info;
->        	fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
->        	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->        	 }
->	
->	}
->
->	
->	location ~ /74 {
->        try_files /74/$uri /74/$uri/ /74/index.php?q=$uri&$args;
->
->               location ~* \.php$ {
->                fastcgi_pass unix:/var/run/php/php74-fpm.sock;
->                include fastcgi_params;
->                fastcgi_index index.php;
->                fastcgi_split_path_info ^(.+\.php)(/.+)$;
->                fastcgi_param PATH_INFO             $fastcgi_path_info;
->                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
->                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->                 }
->
->        }
->
->	location ~ /80 {
->        try_files /80/$uri /80/$uri/ /80/index.php?q=$uri&$args;
->
->                location ~* \.php$ {
->                fastcgi_pass unix:/var/run/php/php80-fpm.sock;
->                include fastcgi_params;
->                fastcgi_index index.php;
->                fastcgi_split_path_info ^(.+\.php)(/.+)$;
->                fastcgi_param PATH_INFO             $fastcgi_path_info;
->                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
->                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->                 }
->
->        }
->	
->        error_page 404 /404.html;
->        error_page 500 502 503 504 /50x.html;
->        location = /50x.html {
->        }
->
->	location ~ \.php$ {
->        try_files $uri =404;
->        fastcgi_pass unix:/var/run/php/php80-fpm.sock;
->        fastcgi_index index.php;
->        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
->        include fastcgi_params;
->   	 }
->	
->
->    }
->}
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        #listen       [::]:80;
+        server_name  192.168.1.89;
+        root         /usr/share/nginx/html;
+	index	index.html;
+
+        include /etc/nginx/default.d/*.conf;
+
+	location / {
+        try_files $uri $uri/ =404;
+    	}
+	
+	location ~ /73 {
+        try_files /73/$uri /73/$uri/ /73/index.php?q=$uri&$args;
+
+		location ~* \.php$ {
+		fastcgi_pass unix:/var/run/php/php73-fpm.sock;
+		include fastcgi_params;
+        	fastcgi_index index.php;
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		fastcgi_param PATH_INFO             $fastcgi_path_info;
+        	fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
+        	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        	 }
+	
+	}
+
+	
+	location ~ /74 {
+        try_files /74/$uri /74/$uri/ /74/index.php?q=$uri&$args;
+
+               location ~* \.php$ {
+                fastcgi_pass unix:/var/run/php/php74-fpm.sock;
+                include fastcgi_params;
+                fastcgi_index index.php;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_param PATH_INFO             $fastcgi_path_info;
+                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                 }
+
+        }
+
+	location ~ /80 {
+        try_files /80/$uri /80/$uri/ /80/index.php?q=$uri&$args;
+
+                location ~* \.php$ {
+                fastcgi_pass unix:/var/run/php/php80-fpm.sock;
+                include fastcgi_params;
+                fastcgi_index index.php;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_param PATH_INFO             $fastcgi_path_info;
+                fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                 }
+
+        }
+	
+        error_page 404 /404.html;
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+        }
+
+	location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_pass unix:/var/run/php/php80-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+   	 }
+	
+
+    }
+}
 
 Untuk link akses website
 - [http://192.168.1.89:869/73](http://192.168.1.89:869/73)
 - [http://192.168.1.89:869/74](http://192.168.1.89:869/74) 
 - [http://192.168.1.89:869/80](http://192.168.1.89:869/80) 
-<br/>
+<br/
 ###Seting interface ke 2 eth1
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/eth1.png
 ) 
