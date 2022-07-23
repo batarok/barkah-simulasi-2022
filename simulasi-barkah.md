@@ -358,9 +358,9 @@ di ubah menjadi
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/eth1-1.png)
 \
-sudo systemctl restart network
+setelah itu lakukan perintah **sudo systemctl restart network**
 \
--ifconfig
+Kemudian lakukan pengecekan hasilnya **ifconfig**
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/eth1-2.png
 ) 
