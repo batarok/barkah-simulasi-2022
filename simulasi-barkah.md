@@ -109,7 +109,7 @@ http {
    	 } 
    	 }
    	}
-   	```
+```
 
 5) Reload service nginx (sudo service nginx reload)
 ### Install php-fpm 7.3, 7.4, 8.0 dan membuat folder website dengan phpinfo untuk masing-masing versi php<br/
