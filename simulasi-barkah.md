@@ -143,19 +143,21 @@ user = apache menjadi user = nginx
 group = apache menjadi group = nginx
 ```
 Kemudian save dan exit.
-
-
+\
 sebelum enable dan start harus membuat folder **php** di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
 - sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting) setelah itu cek status php73
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php73.png
-) 
+)
+\
 selanjutnya lakukan hal sama untuk php74 dan php80 dengan copy config dari php73 dan di modifikasi bagian www.conf.
 untuk php74 yang berbeda pada bagian
+```plaintext
 listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php74-fpm.sock
-
+```
 untuk php80 yang berbeda pada bagian
+```plaintext
 listen = 127.0.0.1:9000 menjadi listen = /var/run/php/php80-fpm.sock
-
+```
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php74-1.png) 
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php74-2.png
 ) 
