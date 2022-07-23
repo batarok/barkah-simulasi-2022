@@ -182,9 +182,11 @@ Untuk isi file index.php nya
 ```plaintext
 <?php phpinfo(); ?
 ```
-
+\
 4) melakukan seting nginx website 73 74 & 80
+\
 nginx website 73
+```plaintext
 location ~ /73 {
         try_files /73/$uri /73/$uri/ /73/index.php?q=$uri&$args;
 
@@ -197,10 +199,11 @@ location ~ /73 {
         	fastcgi_param PATH_TRANSLATED       $document_root$fastcgi_path_info;
         	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         	 }
-	
 	}
-
+```
+\
 nginx website 74
+```plaintext
 location ~ /74 {
         try_files /74/$uri /74/$uri/ /74/index.php?q=$uri&$args;
 
@@ -215,8 +218,10 @@ location ~ /74 {
                  }
 
         }
-
+```
+\
 nginx website 80
+```plaintext
 location ~ /80 {
         try_files /80/$uri /80/$uri/ /80/index.php?q=$uri&$args;
 
@@ -231,8 +236,10 @@ location ~ /80 {
                  }
 
         }
-
+```
+\
 untuk konfigurasi tersebut digabungkan dalam file nginx.conf yang ada di /etc/nginx/nginx.conf, jadi keseluruhan file config seperti ini;
+```plaintext
 user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
@@ -336,7 +343,7 @@ http {
 
     }
 }
-
+```
 Untuk link akses website
 - [http://192.168.1.89:869/73](http://192.168.1.89:869/73)
 - [http://192.168.1.89:869/74](http://192.168.1.89:869/74) 
