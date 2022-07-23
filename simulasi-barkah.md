@@ -366,4 +366,4 @@ Telnet berhasil
 )
 untuk http://192.168.1.89:869/phpMyAdmin belum bisa diakses, untuk solusi menggunakan adminer
 -[http://192.168.1.89:869/admin](http://192.168.1.89:869/admin) 
-![](https://drive.google.com/file/d/1nuEZ6ISKQtbdf04yAhSJD5wbrzNVIZW6/view?usp=sharing) 
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/adminer.png) 
