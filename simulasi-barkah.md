@@ -392,6 +392,10 @@ Telnet berhasil
 ### install mysql dan phpmyadmin
 1 sudo yum install mysql php-mysql -y
 2 install phpmyadmin
+3 Link phpMyAdmin ke /usr/share/nginx/html
+```plaintext
+sudo ln -s /usr/share/phpMyAdmin /usr/share/nginx/html
+```
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-phpmyadmin.png)
 \
