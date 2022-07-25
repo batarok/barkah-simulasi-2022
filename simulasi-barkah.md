@@ -156,7 +156,11 @@ Kemudian save dan exit.
 \
 sebelum enable dan start harus membuat folder **php** di /var/run karena setelah dicek folder tersebut belum ada, setelah itu kalukan perintah
 \
--sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting) setelah itu cek status php73
+-sudo systemctl enable php73-php-fpm (tujuan nya supaya langsung aktif ketika server booting)
+\
+- sudo systemctl start php73-php-fpm
+\
+setelah itu cek status php73
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/php73.png
 )
 \
