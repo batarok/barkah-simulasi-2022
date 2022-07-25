@@ -392,12 +392,13 @@ Telnet berhasil
 ### install mysql dan phpmyadmin
 1 sudo yum install mysql php-mysql -y
 2 install phpmyadmin
+\
+![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-phpmyadmin.png)
+\
 3 Link phpMyAdmin ke /usr/share/nginx/html
 ```plaintext
 sudo ln -s /usr/share/phpMyAdmin /usr/share/nginx/html
 ```
-\
-![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-phpmyadmin.png)
 \
 untuk http://192.168.1.89:869/phpMyAdmin belum bisa diakses, untuk solusi menggunakan adminer
 \
