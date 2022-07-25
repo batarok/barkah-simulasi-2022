@@ -402,5 +402,13 @@ sudo ln -s /usr/share/phpMyAdmin /usr/share/nginx/html
 \
 untuk http://192.168.1.89:869/phpMyAdmin belum bisa diakses, untuk solusi menggunakan adminer
 \
+4. Download adminer
+```plaintext
+wget sudo wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php
+```
+file tersebut di download di dalam /usr/share/nginx/html/admin lalu file tersebut di ubah menjadi index.php
+```plaintext
+sudo mv adminer-4.8.1-en.php index.php
+```
 -[http://192.168.1.89:869/admin](http://192.168.1.89:869/admin) 
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/adminer.png) 
