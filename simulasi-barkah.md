@@ -410,5 +410,6 @@ file tersebut di download di dalam /usr/share/nginx/html/admin lalu file tersebu
 ```plaintext
 sudo mv adminer-4.8.1-en.php index.php
 ```
+5 Input data ke databse
 -[http://192.168.1.89:869/admin](http://192.168.1.89:869/admin) 
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/adminer.png) 
