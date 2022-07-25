@@ -116,16 +116,26 @@ http {
 1) proses install php-fpm
 \
 ![](https://github.com/batarok/barkah-simulasi-2022/blob/main/install-remi-repo.png) 
+\
 -sudo yum -y install yum-utils
+\
 -sudo yum-config-manager --disable 'remi-php*'
+\
 -sudo yum-config-manager --enable remi-php73
+\
 -sudo yum-config-manager --enable remi-php74
+\
 -sudo yum-config-manager --enable remi-php80
+\
 -sudo yum-config-manager --disable 'remi-php*'
+\
 -sudo yum-config-manager --enable remi-php73
+\
 -sudo yum-config-manager --enable remi-php74
+\
 -sudo yum-config-manager --enable remi-php80
--sudo yum install php php73-fpm php74-fpm php80-fpm -y
+\
+-sudo yum install php php73-php-fpm php74-php-fpm php80-php-fpm -y
 
 2) seting config pada php-fpm yang sudah di install
 lakukan backup sebelum edit
